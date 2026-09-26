@@ -36,46 +36,36 @@
     /* 居中标题与导言排版 */
     .welcome-section {
       text-align: center;
-      max-width: 820px;
-      margin: 1.5rem auto 3rem auto;
-      padding: 0 1rem;
+      margin: 1.5rem auto 2.5rem auto;
     }
     .welcome-title {
       font-size: 2.2rem;
       font-weight: 800;
       color: #1a1a1a;
-      margin: 0 0 1.2rem 0;
+      margin: 0;
       letter-spacing: -0.5px;
     }
-    .welcome-statement {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: #374151;
-      margin: 0;
-    }
 
-    /* 简介与照片布局 */
+    /* 简介与照片两栏布局 */
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 270px;
       gap: 2.5rem;
-      align-items: start;
-      margin-bottom: 2.5rem;
+      align-items: center; /* 左右垂直居中对齐 */
+      margin-bottom: 2.8rem;
     }
 
     .bio-text p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--text-dark);
-      margin-top: 0;
-      margin-bottom: 1.2rem;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: #374151;
+      margin: 0 0 1.5rem 0;
     }
 
     .social-links {
       font-size: 0.98rem;
       line-height: 1.8;
-      margin-top: 1.2rem;
-      padding-top: 0.8rem;
+      padding-top: 1rem;
       border-top: 1px solid var(--border-color);
     }
     .social-links a {
@@ -100,13 +90,6 @@
       border-radius: 12px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
       border: 1px solid var(--border-color);
-    }
-    .current-affil {
-      margin-top: 0.9rem;
-      font-size: 0.92rem;
-      color: var(--text-dark);
-      line-height: 1.45;
-      text-align: center;
     }
 
     /* 时间轴区块 */
@@ -154,15 +137,13 @@
       .welcome-title {
         font-size: 1.8rem;
       }
-      .welcome-statement {
-        font-size: 1.02rem;
-      }
       .hero-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
       .profile-sidebar {
         order: -1;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
       .hero-photo {
         max-width: 220px;
@@ -193,22 +174,16 @@
     </nav>
 
     <main>
-      <!-- 居中欢迎区域 -->
+      <!-- 居中欢迎标题 -->
       <section class="welcome-section">
-        <h1 class="welcome-title">Welcome to the Yuqian (Sophia) Yang Research Page</h1>
-        <p class="welcome-statement">
-          I am a materials research scientist specializing in semiconductor technologies[cite: 13]. By integrating core principles from chemistry, physics, and materials science, I design advanced semiconductor materials, spintronic systems, and next-generation energy devices[cite: 13].
-        </p>
+        <h1 class="welcome-title">Welcome to the Yuqian (Sophia) Personal website!</h1>
       </section>
 
-      <!-- 个人自述与照片两栏布局 -->
+      <!-- 简介与照片两栏布局 -->
       <div class="hero-grid">
         <div class="bio-text">
           <p>
-            My core experimental expertise centers on <strong>photovoltaics and spintronics</strong>, with extensive experience in scalable thin-film deposition, buried interface chemistry, and data-driven process optimization. By coupling automated experimental workflows with machine learning frameworks, my research bridges molecular-level design with device-level performance[cite: 14].
-          </p>
-          <p>
-            I have a proven track record of translating lab-scale mechanistic insights into high-performance, stable devices and module-scale systems. Looking ahead, I aim to advance <strong>autonomous self-driving laboratories</strong> and high-throughput materials exploration for next-generation clean energy and quantum information technologies[cite: 14].
+            I am a materials research scientist specializing in semiconductor technologies[cite: 13]. By integrating core principles from chemistry, physics, and materials science, I design advanced semiconductor materials, spintronic systems, and next-generation energy devices[cite: 13].
           </p>
 
           <!-- 快速链接 -->
@@ -226,11 +201,6 @@
         <!-- 个人照片 -->
         <div class="profile-sidebar">
           <img src="prof_pic.jpg.jpg" alt="Yuqian (Sophia) Yang" class="hero-photo" onerror="this.src='avatar.jpg'">
-          <div class="current-affil">
-            <strong>Postdoctoral Researcher</strong><br>
-            Department of Physics<br>
-            University at Buffalo, SUNY[cite: 14]
-          </div>
         </div>
       </div>
 
