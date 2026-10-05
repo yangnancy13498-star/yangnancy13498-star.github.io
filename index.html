@@ -25,27 +25,26 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* 庄重深调学术核心变量 */
+    /* 专属光影与色彩变量 */
     :root {
-      --primary-accent: #EE9360;
-      --secondary-blue: #38bdf8;
-      --heading-color: #f8fafc;
-      --text-main: #e2e8f0;
-      --text-muted: #94a3b8;
-      --link-color: #f472b6;
-      --card-bg: rgba(15, 23, 42, 0.72);
-      --card-border: rgba(148, 163, 184, 0.18);
+      --beam-orange: #fb923c;        /* 光芒暖橙 */
+      --beam-orange-light: #fed7aa;  /* 光心金粉 */
+      --dark-blue: #1e3a8a;          /* 渐变过渡蓝 */
+      --deep-abyss: #070d19;         /* 黑暗基底 */
+      --text-glow: #ffffff;
+      --text-main: #e2e8f0;          /* 银灰高对比文字 */
+      --text-muted: #94a3b8;         /* 柔和次要文字 */
+      --link-glow: #67e8f9;          /* 极光青色 */
     }
 
-    /* 庄重深邃的渐变背景 (Slate & Deep Navy) */
+    /* 核心背景：一道光刺破黑暗（深蓝暗夜 -> 橙光辐射） */
     body {
-      background: linear-gradient(
-        135deg, 
-        #0b0f19 0%, 
-        #111827 35%, 
-        #0f172a 70%, 
-        #0a1120 100%
-      );
+      background-color: var(--deep-abyss);
+      background-image: 
+        /* 右上倾泻而下的暖橙光束 */
+        radial-gradient(ellipse 90% 70% at 85% -10%, rgba(251, 146, 60, 0.42) 0%, rgba(194, 65, 12, 0.28) 32%, rgba(30, 58, 138, 0.18) 65%, transparent 100%),
+        /* 全局从深暗夜空向微光的对角线流动 */
+        linear-gradient(135deg, #050811 0%, #0a1122 35%, #132347 70%, #1e325c 100%);
       background-attachment: fixed;
       min-height: 100vh;
       color: var(--text-main);
@@ -55,69 +54,78 @@
     }
 
     .container {
-      max-width: 980px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 1.8rem;
       box-sizing: border-box;
     }
 
-    /* 居中标题与导言排版 */
+    /* 居中标题与光感文字排版 */
     .welcome-section {
       text-align: center;
-      margin: 2.4rem auto 2.8rem auto;
+      margin: 2.8rem auto 2.6rem auto;
     }
     .welcome-title {
-      font-size: 2.35rem;
+      font-size: 2.45rem;
       font-weight: 800;
-      color: var(--heading-color);
-      margin: 0;
       letter-spacing: -0.5px;
       line-height: 1.25;
+      margin: 0;
+      /* 标题呈现从金色光芒过渡到纯白的渐变质感 */
+      background: linear-gradient(100deg, #ffffff 30%, var(--beam-orange-light) 75%, var(--beam-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(251, 146, 60, 0.2);
     }
 
-    /* 简介与照片两栏布局 */
+    /* 简介与照片主卡片（磨砂半透明面板） */
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 280px;
       gap: 2.8rem;
-      align-items: center; /* 垂直居中对齐 */
-      margin-bottom: 3.2rem;
-      background: var(--card-bg);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      padding: 2.2rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+      background: rgba(13, 22, 41, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 2.4rem;
       border-radius: 16px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(254, 215, 170, 0.18);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55), 0 0 20px rgba(251, 146, 60, 0.08);
     }
 
-    /* 正文两端对齐 */
+    /* 重点自述段落：端庄两端对齐 */
     .bio-text p.lead-statement {
-      font-size: 1.15rem;
-      line-height: 1.85;
-      color: var(--text-main);
+      font-size: 1.16rem;
+      line-height: 1.88;
+      color: #f1f5f9;
       text-align: justify;
       text-justify: inter-word;
       hyphens: auto;
       margin: 0 0 1.6rem 0;
       font-weight: 400;
+      letter-spacing: 0.1px;
     }
 
     .social-links {
-      font-size: 0.96rem;
-      line-height: 1.9;
-      padding-top: 1.1rem;
-      border-top: 1px dashed rgba(148, 163, 184, 0.25);
+      font-size: 0.98rem;
+      line-height: 2;
+      padding-top: 1.2rem;
+      border-top: 1px dashed rgba(254, 215, 170, 0.2);
+    }
+    .social-links strong {
+      color: var(--beam-orange-light);
     }
     .social-links a {
-      color: var(--secondary-blue);
+      color: var(--link-glow);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.15s ease;
+      transition: all 0.2s ease;
     }
     .social-links a:hover {
       text-decoration: underline;
-      color: var(--primary-accent);
+      color: var(--beam-orange);
+      text-shadow: 0 0 8px rgba(251, 146, 60, 0.4);
     }
 
     .profile-sidebar {
@@ -132,78 +140,96 @@
       height: 320px;
       object-fit: cover;
       border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-      border: 2px solid rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(254, 215, 170, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(251, 146, 60, 0.25);
     }
 
     /* 时间轴区块标题 */
     .section-title {
-      font-size: 1.55rem;
+      font-size: 1.58rem;
       font-weight: 750;
-      color: var(--primary-accent);
-      border-bottom: 2px solid rgba(238, 147, 96, 0.25);
+      color: var(--beam-orange);
+      border-bottom: 2px solid rgba(251, 146, 60, 0.35);
       padding-bottom: 0.45rem;
-      margin-top: 3.2rem;
-      margin-bottom: 1.5rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1.6rem;
       letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+    }
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--beam-orange);
+      border-radius: 50%;
+      margin-right: 12px;
+      box-shadow: 0 0 10px var(--beam-orange);
     }
 
-    /* 优雅暗调时间轴条目 */
+    /* 时间轴条目卡片 */
     .timeline-item {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 0.8rem;
-      margin-bottom: 1.2rem;
-      padding: 1.2rem 1.4rem;
-      background: var(--card-bg);
+      margin-bottom: 1.25rem;
+      padding: 1.3rem 1.6rem;
+      background: rgba(15, 23, 42, 0.6);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border-radius: 10px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      line-height: 1.55;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+      line-height: 1.6;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .timeline-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(251, 146, 60, 0.3);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     }
     .timeline-role {
       font-weight: 700;
-      font-size: 1.08rem;
-      color: var(--heading-color);
+      font-size: 1.1rem;
+      color: var(--text-glow);
     }
     .timeline-date {
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       font-weight: 600;
-      color: var(--secondary-blue);
+      color: var(--beam-orange-light);
       white-space: nowrap;
     }
     .timeline-institution {
-      font-size: 1rem;
-      color: var(--text-muted);
+      font-size: 1.02rem;
+      color: var(--text-main);
       grid-column: 1 / -1;
       margin-top: 0.2rem;
     }
     .timeline-location {
-      font-size: 0.9rem;
-      color: #64748b;
+      font-size: 0.92rem;
+      color: var(--text-muted);
       font-style: italic;
-      margin-top: 0.15rem;
+      margin-top: 0.2rem;
     }
 
     footer {
-      margin-top: 4.5rem;
-      padding: 2.2rem 0;
+      margin-top: 5rem;
+      padding: 2.4rem 0;
       text-align: center;
       font-size: 0.9rem;
-      color: #64748b;
-      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     @media (max-width: 820px) {
       .welcome-title {
-        font-size: 1.9rem;
+        font-size: 1.95rem;
       }
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 1.8rem;
-        padding: 1.5rem;
+        gap: 2rem;
+        padding: 1.6rem;
       }
       .profile-sidebar {
         order: -1;
@@ -215,7 +241,7 @@
       }
       .timeline-item {
         grid-template-columns: 1fr;
-        gap: 0.25rem;
+        gap: 0.3rem;
       }
       .timeline-date {
         font-size: 0.9rem;
@@ -250,7 +276,7 @@
       <div class="hero-grid">
         <div class="bio-text">
           <p class="lead-statement">
-            I am a materials research scientist specializing in semiconductor technologies. By integrating core principles from chemistry, physics, and materials science, I design advanced semiconductor materials, spintronic systems, and next-generation energy devices.
+            I am a materials research scientist specializing in semiconductor technologies[cite: 13]. By integrating core principles from chemistry, physics, and materials science, I design advanced semiconductor materials, spintronic systems, and next-generation energy devices[cite: 13].
           </p>
 
           <!-- 快速学术链接 -->
@@ -279,8 +305,8 @@
           <div class="timeline-role">Postdoctoral Researcher</div>
           <div class="timeline-date">Jul. 2026 – Present</div>
           <div class="timeline-institution">
-            Department of Physics, University at Buffalo, SUNY
-            <div class="timeline-location">Buffalo, NY, USA</div>
+            Department of Physics, University at Buffalo, SUNY[cite: 1]
+            <div class="timeline-location">Buffalo, NY, USA[cite: 1]</div>
           </div>
         </div>
 
@@ -288,8 +314,8 @@
           <div class="timeline-role">Postdoctoral Researcher</div>
           <div class="timeline-date">Jul. 2024 – Jun. 2026</div>
           <div class="timeline-institution">
-            Department of Applied Physical Sciences, University of North Carolina at Chapel Hill
-            <div class="timeline-location">Chapel Hill, NC, USA</div>
+            Department of Applied Physical Sciences, University of North Carolina at Chapel Hill[cite: 1]
+            <div class="timeline-location">Chapel Hill, NC, USA[cite: 1]</div>
           </div>
         </div>
 
@@ -297,8 +323,8 @@
           <div class="timeline-role">Postdoctoral Researcher</div>
           <div class="timeline-date">Oct. 2021 – Jul. 2024</div>
           <div class="timeline-institution">
-            Helmholtz-Zentrum Berlin for Materials and Energy (HZB)
-            <div class="timeline-location">Berlin, Germany</div>
+            Helmholtz-Zentrum Berlin for Materials and Energy (HZB)[cite: 1]
+            <div class="timeline-location">Berlin, Germany[cite: 1]</div>
           </div>
         </div>
       </section>
@@ -311,8 +337,8 @@
           <div class="timeline-role">Ph.D. in Materials Science</div>
           <div class="timeline-date">Sept. 2016 – Jun. 2021</div>
           <div class="timeline-institution">
-            College of Materials Science and Engineering, Huaqiao University
-            <div class="timeline-location">Xiamen, China</div>
+            College of Materials Science and Engineering, Huaqiao University[cite: 1]
+            <div class="timeline-location">Xiamen, China[cite: 1]</div>
           </div>
         </div>
 
@@ -320,8 +346,8 @@
           <div class="timeline-role">B.S. in Applied Chemistry</div>
           <div class="timeline-date">Sept. 2012 – Jul. 2016</div>
           <div class="timeline-institution">
-            College of Materials Science and Engineering, Huaqiao University
-            <div class="timeline-location">Xiamen, China</div>
+            College of Materials Science and Engineering, Huaqiao University[cite: 1]
+            <div class="timeline-location">Xiamen, China[cite: 1]</div>
           </div>
         </div>
       </section>
