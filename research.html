@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPE1T4LDB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-REPE1T4LDB');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research | Yuqian (Sophia) Yang</title>
-  <meta name="description" content="Research pillars of Yuqian (Sophia) Yang: Scalable Halide Photovoltaics, Chiral Spintronics, and Data-Driven Autonomous Labs.">
+  <meta name="description" content="Research pillars of Yuqian (Sophia) Yang: Scalable Halide Photovoltaics, Chiral Spintronics, Photodetector Sensors, and Data-Driven Optimization.">
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -55,15 +65,15 @@
     .research-container {
       display: flex;
       flex-direction: column;
-      gap: 3.5rem;
+      gap: 3rem;
       margin-bottom: 3.5rem;
     }
 
     /* 研究支柱卡片（两栏图文混排） */
     .pillar-card {
       display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 2.5rem;
+      grid-template-columns: 360px 1fr;
+      gap: 2.2rem;
       align-items: center;
       padding: 2rem;
       background: #ffffff;
@@ -78,27 +88,29 @@
       box-shadow: 0 8px 24px rgba(30, 58, 138, 0.12);
     }
 
-    /* 卡片图片 */
+    /* 卡片图片框 */
     .pillar-img-box {
       width: 100%;
-      height: 220px;
+      height: 230px;
       overflow: hidden;
       border-radius: 8px;
       border: 1px solid var(--border-color);
-      background: #f8fafc;
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0.5rem;
+      box-sizing: border-box;
     }
     .pillar-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     /* 卡片文本内容 */
     .pillar-content h2 {
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--theme-blue-dark);
       margin-top: 0;
@@ -108,7 +120,7 @@
     .pillar-content h2 span.number {
       color: var(--theme-orange-dark);
       font-weight: 800;
-      margin-right: 4px;
+      margin-right: 6px;
     }
 
     .pillar-content p {
@@ -145,14 +157,14 @@
     }
 
     /* 移动端适配 */
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
       .pillar-card {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 1.5rem;
       }
       .pillar-img-box {
-        height: 200px;
+        height: 210px;
       }
       .banner-inner h1 {
         font-size: 2.2rem;
@@ -179,7 +191,7 @@
     <div class="banner-inner">
       <h1>Research Program</h1>
       <p>
-        Integrating experimental materials chemistry, device engineering, and data-driven methods to develop next-generation semiconductors for renewable energy and spin-optoelectronics.
+        Integrating experimental materials chemistry, device physics, and data-driven methods to develop next-generation semiconductors for renewable energy and spin-optoelectronics.
       </p>
     </div>
   </header>
@@ -190,19 +202,20 @@
       <!-- Pillar 1: 可扩展光伏与界面工程 -->
       <section class="pillar-card">
         <div class="pillar-img-box">
-          <img src="research_pv.png" alt="Halide Perovskite Solar Cells" class="pillar-img" onerror="this.src='prof_pic.jpg.jpg'">
+          <img src="research1.png" alt="Scalable Photovoltaics & Advanced Interface Engineering" class="pillar-img" onerror="this.src='prof_pic.jpg.jpg'">
         </div>
         <div class="pillar-content">
-          <h2><span class="number">01.</span> Scalable Halide Photovoltaics &amp; Module Engineering</h2>
+          <h2><span class="number">01.</span> Scalable Photovoltaics &amp; Advanced Interface Engineering</h2>
           <p>
-            Bridging fundamental materials synthesis with scalable module manufacturing. We elucidate Ostwald ripening-assisted crystallization dynamics, design functional inks for low-bandgap Sn/Pb alloys, and chemically modulate buried interlayers (such as phosphonic acid SAMs and ITO interfaces) to achieve high efficiency and robust operational durability.
+            To solve the efficiency and operational stability limits of perovskite solar cells, our program engineers materials across multiple interfaces and crystallization stages. By preventing interfacial chemical degradation with molecular monolayers, designing selective carrier transport layers, and passivating grain boundaries, we suppress defect recombination to build high-efficiency, durable photovoltaic devices and modules.
           </p>
           <div class="pillar-tags">
             <span class="tag-orange">Science 2026</span>
             <span class="tag-orange">Adv. Mater. 2024</span>
-            <span class="tag-blue">Interfacial Chemistry</span>
+            <span class="tag-blue">Buried Interfaces</span>
+            <span class="tag-blue">Phosphonic Acid SAMs</span>
+            <span class="tag-blue">Defect Passivation</span>
             <span class="tag-blue">Module Durability</span>
-            <span class="tag-blue">Flexible Devices</span>
           </div>
         </div>
       </section>
@@ -210,38 +223,59 @@
       <!-- Pillar 2: 手性半导体与自旋电子学 -->
       <section class="pillar-card">
         <div class="pillar-img-box">
-          <img src="research_spintronics.png" alt="Chiral Semiconductors and Spintronics" class="pillar-img" onerror="this.src='UB_Physics.png'">
+          <img src="research2.png" alt="Symmetry-Broken Semiconductors for Spin-Optoelectronic Logic" class="pillar-img" onerror="this.src='UB_Physics.png'">
         </div>
         <div class="pillar-content">
-          <h2><span class="number">02.</span> Chiral Semiconductors &amp; Spin-Optoelectronics</h2>
+          <h2><span class="number">02.</span> Symmetry-Broken Semiconductors for Spin-Optoelectronic Logic</h2>
           <p>
-            Harnessing broken mirror symmetry in low-dimensional and hybrid chiral semiconductors to manipulate electron and photon angular momentum. By investigating chirality-induced spin selectivity (CISS), our work aims to develop polarization-sensitive photodetectors, circularly polarized light emitters, and novel quantum spintronic devices.
+            To control carrier spin and polarization without magnetic fields, our program exploits strong spin-orbit coupling in low-dimensional semiconductors with broken spatial inversion symmetry. By investigating symmetry breaking across molecularly induced chiral frameworks and deterministic helical crystals, we uncover the quantum transport physics of the Chirality-Induced Spin Selectivity (CISS) effect, bulk spin splitting, and helicity-dependent optical selection rules to construct high-mobility, room-temperature spintronic and optoelectronic logic.
           </p>
           <div class="pillar-tags">
-            <span class="tag-orange">Spin-Optoelectronics</span>
             <span class="tag-orange">CISS Effect</span>
-            <span class="tag-blue">Chiral Assembly</span>
-            <span class="tag-blue">Angular Momentum</span>
-            <span class="tag-blue">Quantum Devices</span>
+            <span class="tag-orange">Chiral Frameworks</span>
+            <span class="tag-blue">Spin Polarization</span>
+            <span class="tag-blue">Broken Symmetry</span>
+            <span class="tag-blue">Quantum Transport</span>
           </div>
         </div>
       </section>
 
-      <!-- Pillar 3: 数据驱动优化与自驱动实验室 -->
+      <!-- Pillar 3: 光电探测器与传感芯片 -->
       <section class="pillar-card">
         <div class="pillar-img-box">
-          <img src="research_ml.png" alt="Machine Learning and Autonomous Labs" class="pillar-img" onerror="this.src='science.jpg'">
+          <img src="research3.png" alt="Optoelectronic Sensors & Detection Devices" class="pillar-img" onerror="this.src='prof_pic.jpg.jpg'">
         </div>
         <div class="pillar-content">
-          <h2><span class="number">03.</span> Data-Driven Optimization &amp; Autonomous Laboratories</h2>
+          <h2><span class="number">03.</span> Optoelectronic Sensors &amp; Detection Devices</h2>
           <p>
-            Developing machine learning frameworks (such as temporal decoupling models) to establish rigorous composition–processing–performance relationships. Moving forward, we aim to integrate robotics and automated synthesis to construct closed-loop, self-driving laboratories for the accelerated discovery of clean energy materials.
+            Our program develops wide-bandgap and oxide semiconductors for high-sensitivity optical and chemical detection. By combining low-temperature thin-film processing with nanostructure engineering, we suppress defect leakage to build ultrafast solar-blind deep-UV photodetectors and sensitive chemical sensing platforms.
+          </p>
+          <div class="pillar-tags">
+            <span class="tag-orange">IEEE EDL 2023</span>
+            <span class="tag-orange">J. Alloys Compd. 2016</span>
+            <span class="tag-blue">Ga₂O₃ Photodetectors</span>
+            <span class="tag-blue">Solar-Blind Detection</span>
+            <span class="tag-blue">Nanostructured Oxides</span>
+            <span class="tag-blue">Gas Sensors</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pillar 4: 数据驱动与机器学习 -->
+      <section class="pillar-card">
+        <div class="pillar-img-box">
+          <img src="research4.png" alt="Data-Driven Optimization & Machine Learning" class="pillar-img" onerror="this.src='science.jpg'">
+        </div>
+        <div class="pillar-content">
+          <h2><span class="number">04.</span> Data-Driven Optimization &amp; Machine Learning</h2>
+          <p>
+            To eliminate empirical trial-and-error in materials design, our program integrates predictive machine learning with experimental workflows. By decoupling multi-step fabrication parameters to forecast device efficiency and applying Bayesian optimization to closed-loop synthesis, we establish data-driven platforms for accelerated semiconductor discovery.
           </p>
           <div class="pillar-tags">
             <span class="tag-orange">JPCC 2024</span>
-            <span class="tag-orange">Self-Driving Labs</span>
+            <span class="tag-orange">Temporal Decoupling</span>
             <span class="tag-blue">Machine Learning</span>
-            <span class="tag-blue">High-Throughput</span>
+            <span class="tag-blue">Bayesian Optimization</span>
             <span class="tag-blue">Closed-Loop Discovery</span>
           </div>
         </div>
