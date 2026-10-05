@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research | Yuqian (Sophia) Yang</title>
-  <meta name="description" content="Research pillars of Yuqian (Sophia) Yang: Scalable Halide Photovoltaics, Chiral Spintronics, Photodetector Sensors, and Data-Driven Optimization.">
+  <meta name="description" content="Research pillars of Yuqian (Sophia) Yang: Symmetry-Broken Semiconductors, Scalable Photovoltaics, Data-Driven Machine Learning, and Detection Devices.">
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -25,9 +25,17 @@
       --theme-blue: #2563eb;
       --theme-blue-dark: #1e3a8a;
       --theme-blue-light: #eff6ff;
-      --text-main: #1f2937;
-      --text-muted: #4b5563;
+      --text-main: #111827;
+      --text-muted: #374151;
       --border-color: #e5e7eb;
+    }
+
+    /* 全局页面宽度拓展 (更宽阔布局) */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      box-sizing: border-box;
     }
 
     /* 顶部橙蓝渐变横幅 */
@@ -36,138 +44,152 @@
       margin-left: calc(-50vw + 50%);
       margin-right: calc(-50vw + 50%);
       background: linear-gradient(90deg, #d3541e 0%, #ea8b4e 22%, #f5e6e1 50%, #8ba4be 78%, #1e40af 100%);
-      padding: 3.5rem 2rem;
+      padding: 3.8rem 2rem;
       box-sizing: border-box;
-      margin-bottom: 2.8rem;
+      margin-bottom: 3rem;
     }
     .banner-inner {
-      max-width: 950px;
+      max-width: 1000px;
       margin: 0 auto;
       text-align: center;
     }
     .banner-inner h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 800;
-      margin: 0 0 0.6rem 0;
+      margin: 0 0 0.8rem 0;
       letter-spacing: -0.5px;
       color: #111111;
     }
     .banner-inner p {
-      font-size: 1.12rem;
-      color: #222222;
-      max-width: 800px;
+      font-size: 1.2rem;
+      color: #1a1a1a;
+      max-width: 880px;
       margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.65;
       font-weight: 500;
     }
 
-    /* 主体研究方向列表 */
+    /* 主体研究方向垂直流 */
     .research-container {
       display: flex;
       flex-direction: column;
-      gap: 3rem;
-      margin-bottom: 3.5rem;
+      gap: 3.5rem;
+      margin-bottom: 4rem;
     }
 
-    /* 研究支柱卡片（两栏图文混排） */
+    /* 支柱卡片（垂直排列结构：图在上，标题居中，文字两端对齐） */
     .pillar-card {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 2.2rem;
-      align-items: center;
-      padding: 2rem;
       background: #ffffff;
-      border: 1px solid #edf2f7;
-      border-left: 5px solid var(--theme-orange-dark);
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.06);
+      border: 1px solid #e2e8f0;
+      border-top: 5px solid var(--theme-orange-dark);
+      border-radius: 12px;
+      padding: 2.2rem;
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.06);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .pillar-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(30, 58, 138, 0.12);
+      box-shadow: 0 10px 28px rgba(30, 58, 138, 0.12);
     }
 
-    /* 卡片图片框 */
+    /* 顶部示意图容器 */
     .pillar-img-box {
       width: 100%;
-      height: 230px;
+      max-height: 380px;
       overflow: hidden;
       border-radius: 8px;
-      border: 1px solid var(--border-color);
+      border: 1px solid #f1f5f9;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem;
-      box-sizing: border-box;
+      margin-bottom: 1.8rem;
     }
     .pillar-img {
       width: 100%;
-      height: 100%;
+      max-height: 380px;
       object-fit: contain;
     }
 
-    /* 卡片文本内容 */
-    .pillar-content h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--theme-blue-dark);
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-      line-height: 1.35;
-    }
-    .pillar-content h2 span.number {
-      color: var(--theme-orange-dark);
+    /* 居中标题 */
+    .pillar-card h2.pillar-title {
+      font-size: 1.65rem;
       font-weight: 800;
-      margin-right: 6px;
+      color: var(--theme-blue-dark);
+      margin: 0 0 1.2rem 0;
+      text-align: center;
+      line-height: 1.4;
+      letter-spacing: -0.3px;
+      width: 100%;
+    }
+    .pillar-card h2.pillar-title span.number {
+      color: var(--theme-orange-dark);
+      font-weight: 900;
+      margin-right: 8px;
     }
 
-    .pillar-content p {
-      font-size: 0.98rem;
-      line-height: 1.68;
+    /* 文本内容两端对齐，字体更大 */
+    .pillar-desc {
+      font-size: 1.08rem;
+      line-height: 1.8;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      text-align: justify;
+      margin: 0 0 1.4rem 0;
+      width: 100%;
     }
 
-    /* 橙蓝主题标签组 */
+    /* 标签组 */
     .pillar-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
+      gap: 0.6rem;
+      justify-content: center;
+      width: 100%;
+      padding-top: 0.5rem;
+      border-top: 1px dashed #e2e8f0;
     }
     .tag-blue {
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       background: var(--theme-blue-light);
       color: var(--theme-blue-dark);
       border: 1px solid #bfdbfe;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
       font-weight: 600;
     }
     .tag-orange {
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       background: #fff7ed;
       color: var(--theme-orange-dark);
       border: 1px solid #fed7aa;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
       font-weight: 600;
     }
 
-    /* 移动端适配 */
+    /* 响应式调整 */
     @media (max-width: 860px) {
-      .pillar-card {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
-      }
-      .pillar-img-box {
-        height: 210px;
+      .container {
+        padding: 0 1rem;
       }
       .banner-inner h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
+      }
+      .pillar-card {
+        padding: 1.5rem;
+      }
+      .pillar-card h2.pillar-title {
+        font-size: 1.35rem;
+      }
+      .pillar-desc {
+        font-size: 1rem;
+        text-align: left;
+      }
+      .pillar-img-box {
+        max-height: 260px;
       }
     }
   </style>
@@ -199,85 +221,85 @@
   <div class="container">
     <main class="research-container">
 
-      <!-- Pillar 1: 可扩展光伏与界面工程 -->
+      <!-- ==================== PILLAR 1: 手性半导体与自旋电子学 ==================== -->
+      <section class="pillar-card">
+        <div class="pillar-img-box">
+          <img src="research2.png" alt="Symmetry-Broken Semiconductors for Spin-Optoelectronic Logic" class="pillar-img" onerror="this.src='prof_pic.jpg.jpg'">
+        </div>
+        <h2 class="pillar-title">
+          <span class="number">01.</span> Symmetry-Broken Semiconductors for Spin-Optoelectronic Logic
+        </h2>
+        <p class="pillar-desc">
+          To control carrier spin and polarization without magnetic fields, our program exploits strong spin-orbit coupling in low-dimensional semiconductors with broken spatial inversion symmetry[cite: 11]. By investigating symmetry breaking across both molecularly induced chiral frameworks and deterministic helical crystals, we uncover the quantum transport physics of the Chirality-Induced Spin Selectivity (CISS) effect, bulk spin splitting, and helicity-dependent optical selection rules to construct high-mobility, room-temperature spintronic and optoelectronic logic[cite: 11].
+        </p>
+        <div class="pillar-tags">
+          <span class="tag-orange">CISS Effect</span>
+          <span class="tag-orange">Broken Inversion Symmetry</span>
+          <span class="tag-blue">Spin Polarization</span>
+          <span class="tag-blue">Chiral Frameworks</span>
+          <span class="tag-blue">Quantum Transport Logic</span>
+        </div>
+      </section>
+
+      <!-- ==================== PILLAR 2: 可扩展光伏与界面工程 ==================== -->
       <section class="pillar-card">
         <div class="pillar-img-box">
           <img src="research1.png" alt="Scalable Photovoltaics & Advanced Interface Engineering" class="pillar-img" onerror="this.src='prof_pic.jpg.jpg'">
         </div>
-        <div class="pillar-content">
-          <h2><span class="number">01.</span> Scalable Photovoltaics &amp; Advanced Interface Engineering</h2>
-          <p>
-            To solve the efficiency and operational stability limits of perovskite solar cells, our program engineers materials across multiple interfaces and crystallization stages. By preventing interfacial chemical degradation with molecular monolayers, designing selective carrier transport layers, and passivating grain boundaries, we suppress defect recombination to build high-efficiency, durable photovoltaic devices and modules.
-          </p>
-          <div class="pillar-tags">
-            <span class="tag-orange">Science 2026</span>
-            <span class="tag-orange">Adv. Mater. 2024</span>
-            <span class="tag-blue">Buried Interfaces</span>
-            <span class="tag-blue">Phosphonic Acid SAMs</span>
-            <span class="tag-blue">Defect Passivation</span>
-            <span class="tag-blue">Module Durability</span>
-          </div>
+        <h2 class="pillar-title">
+          <span class="number">02.</span> Scalable Photovoltaics &amp; Advanced Interface Engineering
+        </h2>
+        <p class="pillar-desc">
+          To solve the efficiency and operational stability limits of perovskite solar cells, our program engineers materials across multiple interfaces and crystallization stages[cite: 1, 7]. By preventing interfacial chemical degradation with molecular monolayers, designing selective carrier transport layers, and passivating grain boundaries, we suppress defect recombination to build high-efficiency, durable photovoltaic devices and modules[cite: 1, 7].
+        </p>
+        <div class="pillar-tags">
+          <span class="tag-orange">Science 2026</span>
+          <span class="tag-orange">Adv. Mater. 2024</span>
+          <span class="tag-blue">Phosphonic Acid SAMs</span>
+          <span class="tag-blue">Buried Interfaces</span>
+          <span class="tag-blue">Defect Passivation</span>
+          <span class="tag-blue">Module Durability</span>
         </div>
       </section>
 
-      <!-- Pillar 2: 手性半导体与自旋电子学 -->
+      <!-- ==================== PILLAR 3: 数据驱动与机器学习 ==================== -->
       <section class="pillar-card">
         <div class="pillar-img-box">
-          <img src="research2.png" alt="Symmetry-Broken Semiconductors for Spin-Optoelectronic Logic" class="pillar-img" onerror="this.src='UB_Physics.png'">
+          <img src="research4.png" alt="Data-Driven Optimization & Machine Learning" class="pillar-img" onerror="this.src='prof_pic.jpg.jpg'">
         </div>
-        <div class="pillar-content">
-          <h2><span class="number">02.</span> Symmetry-Broken Semiconductors for Spin-Optoelectronic Logic</h2>
-          <p>
-            To control carrier spin and polarization without magnetic fields, our program exploits strong spin-orbit coupling in low-dimensional semiconductors with broken spatial inversion symmetry. By investigating symmetry breaking across molecularly induced chiral frameworks and deterministic helical crystals, we uncover the quantum transport physics of the Chirality-Induced Spin Selectivity (CISS) effect, bulk spin splitting, and helicity-dependent optical selection rules to construct high-mobility, room-temperature spintronic and optoelectronic logic.
-          </p>
-          <div class="pillar-tags">
-            <span class="tag-orange">CISS Effect</span>
-            <span class="tag-orange">Chiral Frameworks</span>
-            <span class="tag-blue">Spin Polarization</span>
-            <span class="tag-blue">Broken Symmetry</span>
-            <span class="tag-blue">Quantum Transport</span>
-          </div>
+        <h2 class="pillar-title">
+          <span class="number">03.</span> Data-Driven Optimization &amp; Machine Learning
+        </h2>
+        <p class="pillar-desc">
+          To eliminate empirical trial-and-error in materials design, our program integrates predictive machine learning with experimental workflows[cite: 1, 8]. By decoupling multi-step fabrication parameters to forecast device efficiency and applying Bayesian optimization to closed-loop synthesis, we establish data-driven platforms for accelerated semiconductor discovery[cite: 1, 8].
+        </p>
+        <div class="pillar-tags">
+          <span class="tag-orange">JPCC 2024</span>
+          <span class="tag-orange">Temporal Decoupling</span>
+          <span class="tag-blue">Machine Learning</span>
+          <span class="tag-blue">Bayesian Optimization</span>
+          <span class="tag-blue">Closed-Loop Discovery</span>
         </div>
       </section>
 
-      <!-- Pillar 3: 光电探测器与传感芯片 -->
+      <!-- ==================== PILLAR 4: 光电探测器与传感芯片 ==================== -->
       <section class="pillar-card">
         <div class="pillar-img-box">
           <img src="research3.png" alt="Optoelectronic Sensors & Detection Devices" class="pillar-img" onerror="this.src='prof_pic.jpg.jpg'">
         </div>
-        <div class="pillar-content">
-          <h2><span class="number">03.</span> Optoelectronic Sensors &amp; Detection Devices</h2>
-          <p>
-            Our program develops wide-bandgap and oxide semiconductors for high-sensitivity optical and chemical detection. By combining low-temperature thin-film processing with nanostructure engineering, we suppress defect leakage to build ultrafast solar-blind deep-UV photodetectors and sensitive chemical sensing platforms.
-          </p>
-          <div class="pillar-tags">
-            <span class="tag-orange">IEEE EDL 2023</span>
-            <span class="tag-orange">J. Alloys Compd. 2016</span>
-            <span class="tag-blue">Ga₂O₃ Photodetectors</span>
-            <span class="tag-blue">Solar-Blind Detection</span>
-            <span class="tag-blue">Nanostructured Oxides</span>
-            <span class="tag-blue">Gas Sensors</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Pillar 4: 数据驱动与机器学习 -->
-      <section class="pillar-card">
-        <div class="pillar-img-box">
-          <img src="research4.png" alt="Data-Driven Optimization & Machine Learning" class="pillar-img" onerror="this.src='science.jpg'">
-        </div>
-        <div class="pillar-content">
-          <h2><span class="number">04.</span> Data-Driven Optimization &amp; Machine Learning</h2>
-          <p>
-            To eliminate empirical trial-and-error in materials design, our program integrates predictive machine learning with experimental workflows. By decoupling multi-step fabrication parameters to forecast device efficiency and applying Bayesian optimization to closed-loop synthesis, we establish data-driven platforms for accelerated semiconductor discovery.
-          </p>
-          <div class="pillar-tags">
-            <span class="tag-orange">JPCC 2024</span>
-            <span class="tag-orange">Temporal Decoupling</span>
-            <span class="tag-blue">Machine Learning</span>
-            <span class="tag-blue">Bayesian Optimization</span>
-            <span class="tag-blue">Closed-Loop Discovery</span>
-          </div>
+        <h2 class="pillar-title">
+          <span class="number">04.</span> Optoelectronic Sensors &amp; Detection Devices
+        </h2>
+        <p class="pillar-desc">
+          Our program develops wide-bandgap and oxide semiconductors for high-sensitivity optical and chemical detection[cite: 1]. By combining low-temperature thin-film processing with nanostructure engineering, we suppress defect leakage to build ultrafast solar-blind deep-UV photodetectors and sensitive chemical sensing platforms[cite: 1].
+        </p>
+        <div class="pillar-tags">
+          <span class="tag-orange">IEEE EDL 2023</span>
+          <span class="tag-orange">J. Alloys Compd. 2016</span>
+          <span class="tag-blue">Ga₂O₃ Photodetectors</span>
+          <span class="tag-blue">Solar-Blind Detection</span>
+          <span class="tag-blue">Nanostructured Oxides</span>
+          <span class="tag-blue">Chemical Gas Sensors</span>
         </div>
       </section>
 
