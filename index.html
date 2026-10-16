@@ -62,7 +62,7 @@
     /* 居中标题与导言排版 */
     .welcome-section {
       text-align: center;
-      margin: 2.4rem auto 2.8rem auto;
+      margin: 2.4rem auto 1.5rem auto;
     }
     .welcome-title {
       font-size: 2.35rem;
@@ -71,6 +71,63 @@
       margin: 0;
       letter-spacing: -0.5px;
       line-height: 1.25;
+    }
+
+    /* 方案一：笛卡尔名言引言卡片样式 */
+    .motto-card {
+      position: relative;
+      max-width: 680px;
+      margin: 0 auto 2.6rem auto;
+      padding: 1.25rem 2.2rem 1.1rem 2.2rem;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-left: 4px solid var(--light-beam-orange);
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 4px 18px rgba(30, 58, 138, 0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      border-right: 1px solid rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      text-align: left;
+    }
+    .motto-quote-symbol {
+      position: absolute;
+      top: -10px;
+      left: 12px;
+      font-size: 3.2rem;
+      color: rgba(242, 150, 97, 0.3);
+      font-family: "Georgia", "Cambria", "Times New Roman", serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .motto-text {
+      margin: 0;
+      padding: 0;
+    }
+    .latin-phrase {
+      display: block;
+      font-size: 1.2rem;
+      font-family: "Georgia", "Cambria", "Times New Roman", serif;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--theme-blue-deep);
+      letter-spacing: 0.3px;
+    }
+    .motto-translation {
+      display: block;
+      font-size: 0.96rem;
+      color: #4b5563;
+      font-style: italic;
+      margin-top: 0.35rem;
+      font-family: "Georgia", "Cambria", "Times New Roman", serif;
+    }
+    .motto-author {
+      font-size: 0.86rem;
+      color: #6b7280;
+      margin-top: 0.55rem;
+      text-align: right;
+      font-weight: 500;
+      letter-spacing: 0.2px;
     }
 
     /* 简介与照片两栏布局 */
@@ -198,6 +255,10 @@
       .welcome-title {
         font-size: 1.9rem;
       }
+      .motto-card {
+        padding: 1rem 1.4rem;
+        margin-bottom: 2rem;
+      }
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 1.8rem;
@@ -243,6 +304,16 @@
       <section class="welcome-section">
         <h1 class="welcome-title">Welcome to the Yuqian (Sophia) Personal website!</h1>
       </section>
+
+      <!-- 笛卡尔哲学引言卡片（Hero 灵感区） -->
+      <div class="motto-card">
+        <div class="motto-quote-symbol">“</div>
+        <blockquote class="motto-text">
+          <span class="latin-phrase">“Dubito, ergo cogito, ergo sum.”</span>
+          <span class="motto-translation">(I doubt, therefore I think; I think, therefore I am.)</span>
+        </blockquote>
+        <div class="motto-author">— René Descartes</div>
+      </div>
 
       <!-- 简介与照片两栏布局 -->
       <div class="hero-grid">
